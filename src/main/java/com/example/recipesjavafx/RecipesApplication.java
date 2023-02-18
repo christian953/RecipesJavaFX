@@ -1,6 +1,11 @@
 package com.example.recipesjavafx;
+
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class RecipesApplication extends Application {
 
@@ -9,7 +14,11 @@ public class RecipesApplication extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        
+    public void start(Stage primaryStage) throws IOException {
+        final FXMLLoader fxmlLoader = new FXMLLoader(RecipesApplication.class.getResource("recipe_list_view_scene.fxml"));
+        final Scene scene = new Scene(fxmlLoader.load());
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 }
