@@ -49,6 +49,7 @@ public class NewRecipeController {
         ingredientsListView.setCellFactory(new IngredientCellFactory());
         utensilsListView.setCellFactory(new UtensilCellFactory());
         stepListView.setCellFactory(new StepCellFactory());
+
     }
 
     @FXML
@@ -57,6 +58,7 @@ public class NewRecipeController {
         ArrayList<Ingredient> ingredients = new ArrayList<>(getIngredients());
         ArrayList<Utensil> utensils = new ArrayList<>(getUtensils());
         ArrayList<Step> steps = new ArrayList<>(getSteps());
+        System.out.println(steps);
         String name = recipeNameInputTextArea.getText();
         String time = timeInput.getText();
         Recipe recipeToAdd = new Recipe(name,time, steps, ingredients, utensils );
@@ -159,5 +161,10 @@ public class NewRecipeController {
             ListView<Step> listView = (ListView<Step>) event.getSource();
             listView.getItems().remove(listView.getSelectionModel().getSelectedItem());
         }
+    }
+
+
+    public void syncStep(ListView.EditEvent<Step> stepEditEvent) {
+        System.out.println(stepEditEvent.getIndex());
     }
 }

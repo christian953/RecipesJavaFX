@@ -44,7 +44,7 @@
                   </VBox>
                </children>
             </HBox>
-            <ListView fx:id="stepListView" onKeyPressed="#deleteStepFromListView" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="stepListView" onEditStart="#syncStep" onKeyPressed="#deleteStepFromListView" prefHeight="200.0" prefWidth="200.0" />
             <HBox prefHeight="100.0" prefWidth="700.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#addStep" prefHeight="70.0" prefWidth="119.0" text="Schritt Hinzufügen" />
