@@ -19,6 +19,7 @@ public class RecipesApplication extends Application {
         final Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
+        primaryStage.setTitle("Rezepte");
         primaryStage.show();
     }
 }

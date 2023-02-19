@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bf9d2c92-7130-4d1c-a6fc-6cdab7bb61a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipeDataBase.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/NewRecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/NewRecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDetailViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDetailViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/StepCellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/StepCellFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/recipe_detail_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/recipe_detail_view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,30 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/chris/IdeaProjects/RecipesJavaFX/src/main/java/com/example/recipesjavafx&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/chris/Downloads/sqlite-jdbc-3.40.1.0.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.56436783&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/chris/IdeaProjects/RecipesJavaFX/src/main/java/com/example/recipesjavafx",
+    "last_opened_file_path": "C:/Users/chris/Downloads/sqlite-jdbc-3.40.1.0.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.56436783",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.recipesjavafx" />
@@ -116,7 +121,9 @@
       <workItem from="1676750777452" duration="17914000" />
       <workItem from="1676769398304" duration="4430000" />
       <workItem from="1676792386474" duration="4401000" />
-      <workItem from="1676803218485" duration="93000" />
+      <workItem from="1676803218485" duration="324000" />
+      <workItem from="1676804605062" duration="90000" />
+      <workItem from="1676809402975" duration="834000" />
     </task>
     <servers />
   </component>

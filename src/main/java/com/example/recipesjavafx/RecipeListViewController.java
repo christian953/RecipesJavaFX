@@ -60,7 +60,7 @@ public class RecipeListViewController {
         RecipeDetailViewController controller = new RecipeDetailViewController(selectedRecipe);
         fxmlLoader.setController(controller);
         detailStage.setScene(new Scene(fxmlLoader.load()));
-
+        detailStage.setTitle(selectedRecipe.name());
         detailStage.show();
     }
 

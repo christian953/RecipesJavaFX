@@ -7,12 +7,12 @@
     <children>
         <VBox prefHeight="400.0" prefWidth="700.0">
             <children>
-                <HBox prefHeight="55.0" prefWidth="700.0">
+                <HBox prefHeight="55.0" prefWidth="700.0" spacing="20.0">
                     <children>
-                        <Label text="Name:" />
-                        <Label fx:id="recipeNameDisplay" prefHeight="26.0" prefWidth="237.0" />
-                        <Label text="Benötigte Zeit" />
-                        <Label fx:id="timeDisplay" prefHeight="26.0" prefWidth="221.0" />
+                        <Label prefHeight="48.0" prefWidth="34.0" text="Name:" />
+                        <Label fx:id="recipeNameDisplay" prefHeight="42.0" prefWidth="217.0" />
+                        <Label prefHeight="68.0" prefWidth="75.0" text="Benötigte Zeit" />
+                        <Label fx:id="timeDisplay" prefHeight="42.0" prefWidth="216.0" />
                     </children>
                 </HBox>
                 <HBox prefHeight="166.0" prefWidth="700.0">

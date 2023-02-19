@@ -23,7 +23,7 @@ public class RecipeDetailViewController {
         System.out.println(recipe);
         this.recipe = selectedRecipe;
     }
-
+    @FXML
     public void initialize() throws SQLException, ClassNotFoundException {
         recipeNameDisplay.setText(recipe.name());
         timeDisplay.setText(recipe.approxTime());
@@ -33,9 +33,10 @@ public class RecipeDetailViewController {
     private void initializeListViews() {
         ingredientsListView.setCellFactory(new IngredientCellFactory());
         utensilsListView.setCellFactory(new UtensilCellFactory());
-        stepListView.setCellFactory(new StepCellFactory());
+        stepListView.setCellFactory(new StepCellFactory(false));
         ingredientsListView.getItems().addAll(recipe.ingredients());
         utensilsListView.getItems().addAll(recipe.utensils());
+        System.out.println(recipe.steps());
         stepListView.getItems().addAll(recipe.steps());
     }
 

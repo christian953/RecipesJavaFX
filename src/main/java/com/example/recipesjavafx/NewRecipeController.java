@@ -48,7 +48,7 @@ public class NewRecipeController {
     private void initializeListViews() {
         ingredientsListView.setCellFactory(new IngredientCellFactory());
         utensilsListView.setCellFactory(new UtensilCellFactory());
-        stepListView.setCellFactory(new StepCellFactory());
+        stepListView.setCellFactory(new StepCellFactory(true));
 
     }
 

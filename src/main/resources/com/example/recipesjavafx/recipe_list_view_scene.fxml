@@ -7,10 +7,10 @@
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ListView fx:id="recipeListView" onMouseClicked="#openDetailView" prefHeight="304.0" prefWidth="600.0" />
+            <ListView fx:id="recipeListView" onMouseClicked="#openDetailView" prefHeight="413.0" prefWidth="600.0" />
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#addNewRecipe" text="Rezept hinzufügen" />
+                  <Button mnemonicParsing="false" onAction="#addNewRecipe" prefHeight="98.0" prefWidth="624.0" text="Rezept hinzufügen" />
                </children>
             </HBox>
          </children>
