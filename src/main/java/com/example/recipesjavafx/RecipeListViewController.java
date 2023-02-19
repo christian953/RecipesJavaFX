@@ -3,13 +3,16 @@ package com.example.recipesjavafx;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import org.w3c.dom.events.MouseEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,4 +51,17 @@ public class RecipeListViewController {
         final Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setScene(scene);
     }
+
+    public void openDetailView(Event event) throws IOException, SQLException, ClassNotFoundException {
+        ListView<Recipe> listView = (ListView<Recipe>) event.getSource();
+        Recipe selectedRecipe = listView.getSelectionModel().getSelectedItem();
+        final FXMLLoader fxmlLoader = new FXMLLoader(RecipeListViewController.class.getResource("recipe_detail_view.fxml"));
+        Stage detailStage = new Stage();
+        RecipeDetailViewController controller = new RecipeDetailViewController(selectedRecipe);
+        fxmlLoader.setController(controller);
+        detailStage.setScene(new Scene(fxmlLoader.load()));
+
+        detailStage.show();
+    }
+
 }
