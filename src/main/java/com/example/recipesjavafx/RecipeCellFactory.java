@@ -14,7 +14,7 @@ public class RecipeCellFactory implements Callback<ListView<Recipe>, ListCell<Re
             protected void updateItem(Recipe recipe, boolean empty) {
                 super.updateItem(recipe, empty);
                 if (recipe != null) {
-                    setText(recipe.name() + " Beschreibung: " + recipe.description());
+                    setText(recipe.name());
                 } else {
                     setText("");
                 }

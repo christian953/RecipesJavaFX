@@ -14,7 +14,7 @@ public class RecipesApplication extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws IOException, ClassNotFoundException {
         final FXMLLoader fxmlLoader = new FXMLLoader(RecipesApplication.class.getResource("recipe_list_view_scene.fxml"));
         final Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setScene(scene);

@@ -5,21 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf9d2c92-7130-4d1c-a6fc-6cdab7bb61a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Recipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeCellFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Step.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Utensil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/recipe_list_view_scene.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/AddIngredientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/AddUtensilController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/IngredientCellFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/NewRecipeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDetailViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/StepCellFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/UtensilCellFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/add_ingredient_view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/add_utensil_view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/new_recipe_view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/recipe_detail_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/beab070c-ada3-433f-90a8-16f854e72e18.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeCellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeCellFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeListViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipesApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/recipe_list_view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/recipe_list_view_scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/recipe_list_view_scene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +39,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Record" />
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -40,8 +49,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f88ab19b-f023-4644-89c5-934a24f40f03" />
+        <option name="url" value="https://github.com/christian953/RecipesJavaFX.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MigrationScriptOptions">
+    <option name="ignoreImplicitObjects" value="true" />
+    <option name="ignoreSourceCode" value="false" />
   </component>
   <component name="ProjectId" id="2LuXlpTPpluIjuZSPgXlO0lJ43y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,7 +81,21 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "C:/Users/chris/IdeaProjects/RecipesJavaFX/src/main/java/com/example/recipesjavafx"
+    "last_directory_selection": "C:/Users/chris/IdeaProjects/RecipesJavaFX/src/main/java/com/example/recipesjavafx",
+    "last_opened_file_path": "C:/Users/chris/Downloads/sqlite-jdbc-3.40.1.0.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.56436783",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -92,6 +132,9 @@
       <option name="presentableId" value="Default" />
       <updated>1676722097752</updated>
       <workItem from="1676722098959" duration="3487000" />
+      <workItem from="1676725996330" duration="587000" />
+      <workItem from="1676733211077" duration="8773000" />
+      <workItem from="1676750777452" duration="17914000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="new_file">
-  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.40">
+<dataSource name="recipeDataBase">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.45">
     <root id="1">
       <ServerVersion>3.39.2</ServerVersion>
     </root>
@@ -1313,28 +1313,184 @@
     <argument id="481" parent="165">
       <Position>1</Position>
     </argument>
-    <table id="482" parent="166" name="sqlite_master">
+    <table id="482" parent="166" name="ingredient"/>
+    <table id="483" parent="166" name="recipe"/>
+    <table id="484" parent="166" name="recipe_ingredient"/>
+    <table id="485" parent="166" name="recipe_utensil"/>
+    <table id="486" parent="166" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="483" parent="482" name="type">
-      <DataType>TEXT|0s</DataType>
+    <table id="487" parent="166" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="488" parent="166" name="step"/>
+    <table id="489" parent="166" name="utensil"/>
+    <column id="490" parent="482" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="484" parent="482" name="name">
-      <DataType>TEXT|0s</DataType>
+    <column id="491" parent="482" name="name">
+      <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="485" parent="482" name="tbl_name">
-      <DataType>TEXT|0s</DataType>
+    <key id="492" parent="482">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="493" parent="483" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="494" parent="483" name="name">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="495" parent="483" name="approxTime">
+      <DasType>TIME|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="486" parent="482" name="rootpage">
-      <DataType>INT|0s</DataType>
+    <key id="496" parent="483">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="497" parent="484" name="recipe_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="498" parent="484" name="ingredient_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="499" parent="484" name="amount">
+      <DasType>TEXT|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="500" parent="484">
+      <ColNames>recipe_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>recipe</RefTableName>
+    </foreign-key>
+    <foreign-key id="501" parent="484">
+      <ColNames>ingredient_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>ingredient</RefTableName>
+    </foreign-key>
+    <index id="502" parent="484" name="sqlite_autoindex_recipe_ingredient_1">
+      <ColNames>recipe_id
+ingredient_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="503" parent="484">
+      <ColNames>recipe_id
+ingredient_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_recipe_ingredient_1</UnderlyingIndexName>
+    </key>
+    <column id="504" parent="485" name="recipe_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="505" parent="485" name="utensil_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="506" parent="485">
+      <ColNames>recipe_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>recipe</RefTableName>
+    </foreign-key>
+    <foreign-key id="507" parent="485">
+      <ColNames>utensil_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>utensil</RefTableName>
+    </foreign-key>
+    <index id="508" parent="485" name="sqlite_autoindex_recipe_utensil_1">
+      <ColNames>recipe_id
+utensil_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="509" parent="485">
+      <ColNames>recipe_id
+utensil_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_recipe_utensil_1</UnderlyingIndexName>
+    </key>
+    <column id="510" parent="486" name="type">
+      <DasType>TEXT|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="511" parent="486" name="name">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="512" parent="486" name="tbl_name">
+      <DasType>TEXT|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="513" parent="486" name="rootpage">
+      <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="487" parent="482" name="sql">
-      <DataType>TEXT|0s</DataType>
+    <column id="514" parent="486" name="sql">
+      <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
+    <column id="515" parent="487" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="516" parent="487" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="517" parent="488" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="518" parent="488" name="text">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="519" parent="488" name="stepNumber">
+      <DasType>INTEGER|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="520" parent="488" name="recipe_id">
+      <DasType>INTEGER|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="521" parent="488" name="time">
+      <DasType>TIME|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="522" parent="488">
+      <ColNames>recipe_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>recipe</RefTableName>
+    </foreign-key>
+    <key id="523" parent="488">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="524" parent="489" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="525" parent="489" name="name">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <key id="526" parent="489">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

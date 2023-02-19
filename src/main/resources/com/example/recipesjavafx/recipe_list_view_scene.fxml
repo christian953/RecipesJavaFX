@@ -3,14 +3,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recipesjavafx.RecipeListViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recipesjavafx.RecipeListViewController">
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0">
          <children>
             <ListView fx:id="recipeListView" prefHeight="304.0" prefWidth="600.0" />
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Rezept hinzufügen" />
+                  <Button mnemonicParsing="false" onAction="#addNewRecipe" text="Rezept hinzufügen" />
                </children>
             </HBox>
          </children>

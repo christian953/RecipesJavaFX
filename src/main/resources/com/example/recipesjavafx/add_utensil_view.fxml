@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="139.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recipesjavafx.AddUtensilController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="140.0" prefWidth="319.0">
+            <children>
+                <Label prefHeight="18.0" prefWidth="94.0" text="Name der Zutat:" />
+                <TextField fx:id="utensilNameInput" />
+                <Button mnemonicParsing="false" onAction="#addUtensil" text="Hinzufügen" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
