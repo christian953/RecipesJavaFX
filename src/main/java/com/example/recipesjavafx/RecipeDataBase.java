@@ -12,8 +12,6 @@ public class RecipeDataBase {
     public RecipeDataBase() throws SQLException, ClassNotFoundException {
         Class.forName("org.sqlite.JDBC");
         String path = System.getProperty("user.dir") + "\\" + "recipeDataBase.sqlite";
-        System.out.println(path);
-        File file = new File(path);
         this.connection = DriverManager.getConnection("jdbc:sqlite:" + path);
         createTables();
     }
@@ -61,30 +59,25 @@ public class RecipeDataBase {
 
     public void addRecipe(Recipe recipe) throws SQLException {
         Statement statement = connection.createStatement();
-        // Insert the recipe into the recipe table
         String insertRecipeString = "INSERT INTO recipe(name, approxTime) VALUES ('" +
                 recipe.name() + "', '" + recipe.approxTime() + "')";
         statement.executeUpdate(insertRecipeString);
 
-        // Get the id of the newly inserted recipe
         String getRecipeIdString = "SELECT last_insert_rowid()";
         int recipeId = statement.executeQuery(getRecipeIdString).getInt(1);
 
-        // Insert the ingredients into the ingredient table and the recipe_ingredient junction table
         for (Ingredient ingredient : recipe.ingredients()) {
             String ingredientName = ingredient.name().toLowerCase().trim();
             PreparedStatement ingredientExistsStatement = connection.prepareStatement("SELECT * FROM ingredient WHERE LOWER(name) = ?");
             ingredientExistsStatement.setString(1, ingredientName);
             ResultSet ingredientExistsResult = ingredientExistsStatement.executeQuery();
             if (!ingredientExistsResult.next()) {
-                // ingredient doesn't exist yet, so insert it
                 String insertIngredientString = "INSERT INTO ingredient(name) VALUES (?)";
                 PreparedStatement insertIngredientStatement = connection.prepareStatement(insertIngredientString);
                 insertIngredientStatement.setString(1, ingredientName);
                 insertIngredientStatement.executeUpdate();
             }
 
-            // Get the id of the ingredient
             PreparedStatement getIngredientIdStatement = connection.prepareStatement("SELECT id FROM ingredient WHERE LOWER(name) = ?");
             getIngredientIdStatement.setString(1, ingredientName);
             ResultSet getIngredientIdResult = getIngredientIdStatement.executeQuery();
@@ -95,21 +88,18 @@ public class RecipeDataBase {
             statement.executeUpdate(insertRecipeIngredientString);
         }
 
-        // Insert the utensils into the utensil table and the recipe_utensil junction table
         for (Utensil utensil : recipe.utensils()) {
             String utensilName = utensil.name().toLowerCase().trim();
             PreparedStatement utensilExistsStatement = connection.prepareStatement("SELECT * FROM utensil WHERE LOWER(name) = ?");
             utensilExistsStatement.setString(1, utensilName);
             ResultSet utensilExistsResult = utensilExistsStatement.executeQuery();
             if (!utensilExistsResult.next()) {
-                // utensil doesn't exist yet, so insert it
                 String insertUtensilString = "INSERT INTO utensil(name) VALUES (?)";
                 PreparedStatement insertUtensilStatement = connection.prepareStatement(insertUtensilString);
                 insertUtensilStatement.setString(1, utensilName);
                 insertUtensilStatement.executeUpdate();
             }
 
-            // Get the id of the utensil
             PreparedStatement getUtensilIdStatement = connection.prepareStatement("SELECT id FROM utensil WHERE LOWER(name) = ?");
             getUtensilIdStatement.setString(1, utensilName);
             ResultSet getUtensilIdResult = getUtensilIdStatement.executeQuery();
@@ -120,14 +110,12 @@ public class RecipeDataBase {
             statement.executeUpdate(insertRecipeUtensilString);
         }
 
-        // Insert the steps into the step table
         for (Step step : recipe.steps()) {
             String insertStepString = "INSERT INTO step(text, recipe_id, time) VALUES ('" +
                     step.text() + "', " + recipeId + ", '" + step.time() + "')";
             statement.executeUpdate(insertStepString);
         }
 
-        // Insert the steps into the step table
         for (Step step : recipe.steps()) {
             String insertStepString = "INSERT INTO step(text, recipe_id, time) VALUES ('" +
                     step.text() + "', " + recipeId + ", '" + step.time() + "')";
@@ -149,7 +137,6 @@ public class RecipeDataBase {
 
             Recipe recipe = new Recipe(recipeName, recipeApproxTime, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
-            // Retrieve the ingredients for the recipe from the recipe_ingredient junction table
             PreparedStatement recipeIngredientStatement = connection.prepareStatement("SELECT ingredient.name, recipe_ingredient.amount FROM ingredient JOIN recipe_ingredient ON ingredient.id = recipe_ingredient.ingredient_id WHERE recipe_ingredient.recipe_id = ?");
             recipeIngredientStatement.setInt(1, recipeId);
             ResultSet recipeIngredientResultSet = recipeIngredientStatement.executeQuery();
@@ -160,7 +147,6 @@ public class RecipeDataBase {
                 recipe.addIngredient(ingredient);
             }
 
-            // Retrieve the utensils for the recipe from the recipe_utensil junction table
             PreparedStatement recipeUtensilStatement = connection.prepareStatement("SELECT utensil.name FROM utensil JOIN recipe_utensil ON utensil.id = recipe_utensil.utensil_id WHERE recipe_utensil.recipe_id = ?");
             recipeUtensilStatement.setInt(1, recipeId);
             ResultSet recipeUtensilResultSet = recipeUtensilStatement.executeQuery();
@@ -170,7 +156,6 @@ public class RecipeDataBase {
                 recipe.addUtensil(utensil);
             }
 
-            // Retrieve the steps for the recipe from the step table
             PreparedStatement stepStatement = connection.prepareStatement("SELECT * FROM step WHERE recipe_id = ?");
             stepStatement.setInt(1, recipeId);
             ResultSet stepResultSet = stepStatement.executeQuery();
@@ -231,9 +216,6 @@ public class RecipeDataBase {
             insertIngredientStatement.setString(1, ingredientNameTrimmed);
             insertIngredientStatement.executeUpdate();
             insertIngredientStatement.close();
-            System.out.println("Added ingredient: " + ingredientNameTrimmed);
-        } else {
-            System.out.println("Ingredient already exists: " + ingredientNameTrimmed);
         }
     }
 
@@ -247,10 +229,7 @@ public class RecipeDataBase {
             PreparedStatement insertUtensilStatement = connection.prepareStatement(insertUtensilString);
             insertUtensilStatement.setString(1, utensilNameTrimmed);
             insertUtensilStatement.executeUpdate();
-            System.out.println("Added utensil: " + utensilNameTrimmed);
             insertUtensilStatement.close();
-        } else {
-            System.out.println("Utensil already exists: " + utensilNameTrimmed);
         }
     }
 
@@ -268,12 +247,10 @@ public class RecipeDataBase {
         ResultSet recipeResult = statement.executeQuery();
 
         if (recipeResult.next()) {
-            // Get recipe data from result set
             int id = recipeResult.getInt("id");
             String name = recipeResult.getString("name");
             String approxTime = recipeResult.getString("approxTime");
 
-            // Get recipe ingredients from junction table
             PreparedStatement getIngredientsStatement = connection.prepareStatement("SELECT ingredient.name, recipe_ingredient.amount FROM ingredient JOIN recipe_ingredient ON ingredient.id = recipe_ingredient.ingredient_id WHERE recipe_ingredient.recipe_id = ?");
             getIngredientsStatement.setInt(1, id);
             ResultSet ingredientsResult = getIngredientsStatement.executeQuery();
@@ -284,7 +261,6 @@ public class RecipeDataBase {
                 ingredients.add(new Ingredient(ingredientName, amount));
             }
 
-            // Get recipe utensils from junction table
             PreparedStatement getUtensilsStatement = connection.prepareStatement("SELECT utensil.name FROM utensil JOIN recipe_utensil ON utensil.id = recipe_utensil.utensil_id WHERE recipe_utensil.recipe_id = ?");
             getUtensilsStatement.setInt(1, id);
             ResultSet utensilsResult = getUtensilsStatement.executeQuery();
@@ -294,7 +270,6 @@ public class RecipeDataBase {
                 utensils.add(new Utensil(utensilName));
             }
 
-            // Get recipe steps from step table
             PreparedStatement getStepsStatement = connection.prepareStatement("SELECT text, stepNumber, time FROM step WHERE recipe_id = ? ORDER BY stepNumber ASC");
             getStepsStatement.setInt(1, id);
             ResultSet stepsResult = getStepsStatement.executeQuery();

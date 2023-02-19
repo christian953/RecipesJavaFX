@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bf9d2c92-7130-4d1c-a6fc-6cdab7bb61a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipeDataBase.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/recipeDataBase.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/NewRecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/NewRecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/Step.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/StepCellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/StepCellFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/new_recipe_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/recipesjavafx/new_recipe_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipesjavafx/RecipeDataBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +115,8 @@
       <workItem from="1676733211077" duration="8773000" />
       <workItem from="1676750777452" duration="17914000" />
       <workItem from="1676769398304" duration="4430000" />
-      <workItem from="1676792386474" duration="4236000" />
+      <workItem from="1676792386474" duration="4401000" />
+      <workItem from="1676803218485" duration="93000" />
     </task>
     <servers />
   </component>
