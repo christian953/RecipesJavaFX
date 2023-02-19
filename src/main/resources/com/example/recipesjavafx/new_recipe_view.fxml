@@ -20,7 +20,7 @@
                   <VBox prefHeight="166.0" prefWidth="350.0">
                      <children>
                         <Label text="Zutateten:" />
-                        <ListView fx:id="ingredientsListView" prefHeight="200.0" prefWidth="350.0" />
+                        <ListView fx:id="ingredientsListView" onKeyPressed="#deleteIngredientFromListView" prefHeight="200.0" prefWidth="350.0" />
                         <HBox prefHeight="100.0" prefWidth="350.0">
                            <children>
                               <ChoiceBox fx:id="ingredientChoiceBox" onMouseClicked="#updateSpinners" prefHeight="26.0" prefWidth="129.0" />
@@ -33,7 +33,7 @@
                   <VBox prefHeight="323.0" prefWidth="350.0">
                      <children>
                         <Label text="Benötigte Utensilien" />
-                        <ListView fx:id="utensilsListView" prefHeight="200.0" prefWidth="349.0" />
+                        <ListView fx:id="utensilsListView" onKeyPressed="#deleteUtensilFromListView" prefHeight="200.0" prefWidth="349.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <ChoiceBox fx:id="utensilChoiceBox" onMouseClicked="#updateSpinners" prefHeight="26.0" prefWidth="221.0" />
@@ -44,7 +44,7 @@
                   </VBox>
                </children>
             </HBox>
-            <ListView fx:id="stepListView" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="stepListView" onKeyPressed="#deleteStepFromListView" prefHeight="200.0" prefWidth="200.0" />
             <HBox prefHeight="100.0" prefWidth="700.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#addStep" prefHeight="70.0" prefWidth="119.0" text="Schritt Hinzufügen" />

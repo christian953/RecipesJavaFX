@@ -11,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -130,5 +132,32 @@ public class NewRecipeController {
     public void updateSpinners() throws SQLException {
         this.utensilChoiceBox.getItems().setAll(recipeDataBase.getAllUtensils());
         this.ingredientChoiceBox.getItems().setAll(recipeDataBase.getAllIngredients());
+    }
+
+    @FXML
+    public void deleteIngredientFromListView(KeyEvent event){
+        KeyCode keyCode = event.getCode();
+        if(keyCode == KeyCode.BACK_SPACE || keyCode == KeyCode.DELETE) {
+            ListView<Ingredient> listview = (ListView<Ingredient>) event.getSource();
+            listview.getItems().remove(listview.getSelectionModel().getSelectedItem());
+        }
+    }
+
+    @FXML
+    public void deleteUtensilFromListView(KeyEvent event){
+        KeyCode keyCode = event.getCode();
+        if(keyCode == KeyCode.BACK_SPACE || keyCode == KeyCode.DELETE) {
+            ListView<Utensil> listView = (ListView<Utensil>) event.getSource();
+            listView.getItems().remove(listView.getSelectionModel().getSelectedItem());
+        }
+    }
+
+    @FXML
+    public void deleteStepFromListView(KeyEvent event){
+        KeyCode keyCode = event.getCode();
+        if(keyCode == KeyCode.BACK_SPACE || keyCode == KeyCode.DELETE) {
+            ListView<Step> listView = (ListView<Step>) event.getSource();
+            listView.getItems().remove(listView.getSelectionModel().getSelectedItem());
+        }
     }
 }
